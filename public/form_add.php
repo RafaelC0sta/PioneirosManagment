@@ -8,9 +8,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adicionar Pioneiro</title>
+    <link rel="stylesheet" href="css/index.css">
 </head>
+<?php include('header.php'); ?>
 <body>
-    <div>
+    <div class="body">
         <form action="../private/add_pioneiro.php" method="post">
             <label>Nome do Pioneiro: </label><input type="text" name="nome"><br>
             <label>Numero de Identificacao do CNE: </label><input type="number" name="id_cne"><br>

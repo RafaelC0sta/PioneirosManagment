@@ -8,9 +8,10 @@
 </head>
 <body>
     <header>
-        <div class="header">
-            Home
-        </div>
+        <ul class="menu">
+            <li><a href="index.php">Home</a></li>
+            <li><a href="karol.php">Karol</a></li>
+        </ul>
     </header>
 </body>
 </html>

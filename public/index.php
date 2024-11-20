@@ -6,8 +6,8 @@
     <title>Pioneiros Managment</title>
     <link rel="stylesheet" href="css/index.css">
 </head>
+<?php include("header.php"); ?>
 <body>
-    <?php include("header.php"); ?>
     <div class="body">
         <h1>Equipas</h1>
         <ul>
