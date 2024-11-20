@@ -1,0 +1,10 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+
+.header {
+    background-color: cornflowerblue;
+    padding: 1%;
+}
