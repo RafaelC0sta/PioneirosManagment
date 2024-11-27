@@ -20,7 +20,7 @@ header {
     justify-content: space-between;
 }
 
-.menu {
+.menu_esquerda {
     width: 7%;
     display: flex;
     list-style: none;
@@ -28,12 +28,30 @@ header {
     align-items: center;
 }
 
-.menu li {
+.menu_esquerda li {
     list-style: none;
-    padding-right: 5px;
+    padding-right: 25%;
 }
 
-.menu li a{
+.menu_esquerda li a{
+    text-decoration: none;
+    color: white;
+}
+
+.menu_direita {
+    width: 7%;
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu_direita li {
+    list-style: none;
+    padding-right: 25%;
+}
+
+.menu_direita li a{
     text-decoration: none;
     color: white;
 }

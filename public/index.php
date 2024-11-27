@@ -9,12 +9,7 @@
 <?php include("header.php"); ?>
 <body>
     <div class="body">
-        <h1>Equipas</h1>
-        <ul>
-            <li>
-                <a href="karol.php">Karol Wojtyla</a>
-            </li>
-        </ul>
+        
     </div>
 </body>
 </html>

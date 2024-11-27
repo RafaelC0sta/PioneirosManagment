@@ -15,9 +15,9 @@
     <!-- Este ecra vai ser para mostrar os pioneiros da Karol -->
     <div class="body">
         <div class="tabelaPioneiros">
-            <h3>Karol</h3>
+            <h3>Salgueiro</h3>
             <?php 
-                $selectPioneiros = "SELECT nome, id_cne, dt_nascimento, cargo, etapaprogresso, noitescampo, doencas FROM karol_wojtyla";
+                $selectPioneiros = "SELECT nome, id_cne, dt_nascimento, cargo, etapaprogresso, noitescampo, doencas FROM salgueiro_maia";
                 $result = $connection->query($selectPioneiros);
 
                 if ($result->num_rows > 0) {
@@ -46,7 +46,9 @@
                     echo "</table>";
                 }
             ?>
-        </div><br>
+            <br>
+        </div>
+        
 
         <a href="form_add.php"><button class="botao"><span>Adicionar Pioneiro</span></button></a>
     </div>
