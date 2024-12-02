@@ -147,7 +147,6 @@ section {
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
-/* Botão de login */
 .loginForm input[type="submit"] {
     width: 100%;
     padding: 10px;

@@ -14,7 +14,7 @@
         <li><a href="#">Apoio</a></li>
     </ul>
     <ul class="menu_direita">
-        <li><a href="#">Perfil</a></li>
+        <li><a href="login.php">Perfil</a></li>
     </ul>
 </header>
 </html>
