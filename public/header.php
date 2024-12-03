@@ -1,3 +1,16 @@
+<?php
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
+
+    if (isset($_SESSION['pioneiro'])) {
+        $username = $_SESSION['pioneiro'];
+    } else {
+        $username = "";
+    }
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +27,8 @@
         <li><a href="#">Apoio</a></li>
     </ul>
     <ul class="menu_direita">
-        <li><a href="login.php">Perfil</a></li>
+        <li><p style="color: white;"><?= htmlspecialchars($username); ?></p></li>
+        <li><a href="../private/logout.php">logout</a></li>
     </ul>
 </header>
 </html>

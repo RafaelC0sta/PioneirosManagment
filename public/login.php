@@ -18,7 +18,7 @@
 
         if ($pioneiro && $pioneiro['password'] === $password) {
             $_SESSION['pioneiro'] = $username;
-            header("Location: ../public/karol.php");
+            header("Location: ../public/index.php");
             exit;
         } else {
             $erro = "Nome ou password incorretos.";
