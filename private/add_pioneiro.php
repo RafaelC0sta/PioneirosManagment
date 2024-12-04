@@ -13,11 +13,6 @@
     $stmt = $connection->prepare("INSERT INTO pioneiros (nome, id_cne, dt_nascimento, equipa, cargo, etapa_progresso, noites_campo, doencas) VALUES (?, ?, ?, ?, ?, ?, ?, ?) ");
     $stmt->bind_param("sissssis", $nome, $id_cne, $dt_nascimento, $equipa, $cargo, $etapaprogresso, $noitescampo, $doencas);
     
-    /*
-    $username = strtolower($nome);
-    $username = str_replace(" ", "", $username);
-    */
-    
     if (!$stmt->execute()) {
         echo "Erro ao inserir da base de dados: " . $stmt->error;
     } else {
@@ -26,6 +21,7 @@
     }
 
     $stmt->close();
+    $stmt2->close();
     $connection->close();
 
 ?>
