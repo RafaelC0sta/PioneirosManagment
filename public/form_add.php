@@ -45,7 +45,7 @@
             <label>Doenças:</label><br>
             <textarea id="doencas" name="doencas" rows="3" cols="50"></textarea><br>
 
-            <input type="submit" value="Adicionar">
+            <input type="submit" value="Adicionar" class="botao">
         </form>
     </div>
 </body>

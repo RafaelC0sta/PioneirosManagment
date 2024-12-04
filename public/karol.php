@@ -1,5 +1,6 @@
 <?php 
     require '../private/connection.php';
+    require '../private/checkLogin.php';
 ?>
 
 <!DOCTYPE html>
@@ -17,7 +18,7 @@
         <div class="tabelaPioneiros">
             <h3>Karol</h3>
             <?php 
-                $selectPioneiros = "SELECT nome, id_cne, dt_nascimento, cargo, etapaprogresso, noitescampo, doencas FROM karol_wojtyla";
+                $selectPioneiros = "SELECT nome, id_cne, dt_nascimento, cargo, etapa_progresso, noites_campo, doencas FROM pioneiros where equipa='Karol Wojtyla'";
                 $result = $connection->query($selectPioneiros);
 
                 if ($result->num_rows > 0) {
@@ -37,8 +38,8 @@
                                 <td>{$row['id_cne']}</td>
                                 <td>{$row['dt_nascimento']}</td>
                                 <td>{$row['cargo']}</td>
-                                <td>{$row['etapaprogresso']}</td>
-                                <td>{$row['noitescampo']}</td>
+                                <td>{$row['etapa_progresso']}</td>
+                                <td>{$row['noites_campo']}</td>
                                 <td>{$row['doencas']}</td>
                             </tr>";
                     }
@@ -48,7 +49,7 @@
             ?>
         </div><br>
 
-        <a href="form_add.php"><button class="botao"><span>Adicionar Pioneiro</span></button></a>
+        <a href="form_add.php"><button class="botao" id="btn_karol"><span>Adicionar Pioneiro</span></button></a>
     </div>
 </body>
 </html>

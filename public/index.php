@@ -1,10 +1,5 @@
 <?php
-    session_start();
-
-    if (!isset($_SESSION['pioneiro'])) {
-        header("Location: login.php");
-        exit;
-    }
+    require '../private/checkLogin.php';
 
     $username = $_SESSION['pioneiro'];
 ?>
@@ -20,7 +15,7 @@
 <?php include("header.php"); ?>
 <body>
     <div class="body">
-        <h1>Bem vindo, <?= htmlspecialchars($username); ?>!</h1>
+        <h1>Olá, <?= htmlspecialchars($username); ?>!</h1>
     </div>
 </body>
 </html>

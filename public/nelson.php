@@ -1,5 +1,6 @@
 <?php 
     require '../private/connection.php';
+    require '../private/checkLogin.php';
 ?>
 
 <!DOCTYPE html>
@@ -12,12 +13,12 @@
 </head>
 <?php include('header.php'); ?>
 <body>
-    <!-- Este ecra vai ser para mostrar os pioneiros da Karol -->
+    <!-- Este ecra vai ser para mostrar os pioneiros da Nelson -->
     <div class="body">
         <div class="tabelaPioneiros">
             <h3>Nelson</h3>
             <?php 
-                $selectPioneiros = "SELECT nome, id_cne, dt_nascimento, cargo, etapaprogresso, noitescampo, doencas FROM nelson_mandela";
+                $selectPioneiros = "SELECT nome, id_cne, dt_nascimento, cargo, etapa_progresso, noites_campo, doencas FROM pioneiros where equipa='Nelson Mandela'";
                 $result = $connection->query($selectPioneiros);
 
                 if ($result->num_rows > 0) {
@@ -37,8 +38,8 @@
                                 <td>{$row['id_cne']}</td>
                                 <td>{$row['dt_nascimento']}</td>
                                 <td>{$row['cargo']}</td>
-                                <td>{$row['etapaprogresso']}</td>
-                                <td>{$row['noitescampo']}</td>
+                                <td>{$row['etapa_progresso']}</td>
+                                <td>{$row['noites_campo']}</td>
                                 <td>{$row['doencas']}</td>
                             </tr>";
                     }
@@ -49,7 +50,7 @@
             <br>
         </div>
     
-        <a href="form_add.php"><button class="botao"><span>Adicionar Pioneiro</span></button></a>
+        <a href="form_add.php"><button class="botao" id="btn_nelson"><span>Adicionar Pioneiro</span></button></a>
     </div>
 </body>
 </html>

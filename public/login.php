@@ -8,13 +8,14 @@
         $username = $_POST['username'];
         $password = $_POST['password'];
 
-        $query = "SELECT * FROM login where username = ?";
-        $stmt = $connection->prepare($query);
+        $queryUsername = "SELECT * FROM login where username = ?";
+        $stmt = $connection->prepare($queryUsername);
         $stmt->bind_param("s", $username);
         $stmt->execute();
 
         $resultado = $stmt->get_result();
         $pioneiro = $resultado->fetch_assoc();
+        
 
         if ($pioneiro && $pioneiro['password'] === $password) {
             $_SESSION['pioneiro'] = $username;

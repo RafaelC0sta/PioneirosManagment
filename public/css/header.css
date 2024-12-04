@@ -39,16 +39,17 @@ header {
 }
 
 .menu_direita {
-    width: 7%;
+    width: 15%;
     display: flex;
     list-style: none;
     justify-content: space-between;
     align-items: center;
+    padding-right: 10%;
 }
 
 .menu_direita li {
     list-style: none;
-    padding-right: 25%;
+    padding-right: 50%;
 }
 
 .menu_direita li a{
