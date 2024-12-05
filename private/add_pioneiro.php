@@ -21,7 +21,6 @@
     }
 
     $stmt->close();
-    $stmt2->close();
     $connection->close();
 
 ?>
