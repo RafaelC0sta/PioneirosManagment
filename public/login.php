@@ -14,16 +14,31 @@
         $stmt->execute();
 
         $resultado = $stmt->get_result();
-        $pioneiro = $resultado->fetch_assoc();
+        $login = $resultado->fetch_assoc();
         
 
-        if ($pioneiro && $pioneiro['password'] === $password) {
-            $_SESSION['pioneiro'] = $username;
-            header("Location: ../public/index.php");
-            exit;
+        if ($login && $login['password'] === $password) {
+            $queryCargoEquipa = "SELECT cargo, equipa FROM pioneiros WHERE id = ?";
+            $stmt2 = $connection->prepare($queryCargoEquipa);
+            $stmt2->bind_param("i", $login['id_pioneiro']);
+            $stmt2->execute();
+        
+            $resultadoCargoEquipa = $stmt2->get_result();
+            $pioneiroInfo = $resultadoCargoEquipa->fetch_assoc();
+        
+            if ($pioneiroInfo) {
+                $_SESSION['pioneiro'] = $username;
+                $_SESSION['cargo'] = $pioneiroInfo['cargo'];
+                $_SESSION['equipa'] = $pioneiroInfo['equipa'];
+                header("Location: ../public/index.php");
+                exit;
+            } else {
+                $erro = "Cargo ou equipa não encontrados para o pioneiro.";
+            }
         } else {
             $erro = "Nome ou password incorretos.";
         }
+        
     }
 ?>
 

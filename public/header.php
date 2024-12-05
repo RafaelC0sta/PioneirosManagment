@@ -5,8 +5,10 @@
 
     if (isset($_SESSION['pioneiro'])) {
         $username = $_SESSION['pioneiro'];
+        $cargo = $_SESSION['cargo'];
     } else {
         $username = "";
+        $cargo = "";
     }
 ?>
 

@@ -2,6 +2,8 @@
     require '../private/checkLogin.php';
 
     $username = $_SESSION['pioneiro'];
+    $cargo = $_SESSION['cargo'];
+    $equipa = $_SESSION['equipa'];
 ?>
 
 <!DOCTYPE html>
@@ -16,6 +18,8 @@
 <body>
     <div class="body">
         <h1>Olá, <?= htmlspecialchars($username); ?>!</h1>
+        <h2><?= htmlspecialchars($cargo); ?></h2>
+        <h2><?= htmlspecialchars($equipa); ?></h2>
     </div>
 </body>
 </html>
