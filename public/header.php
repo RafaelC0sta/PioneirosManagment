@@ -5,10 +5,8 @@
 
     if (isset($_SESSION['pioneiro'])) {
         $nome = $_SESSION['pioneiro'];
-        $cargo = $_SESSION['cargo'];
     } else {
         $nome = "";
-        $cargo = "";
     }
 ?>
 
