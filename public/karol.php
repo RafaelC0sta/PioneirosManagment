@@ -1,6 +1,10 @@
 <?php 
     require '../private/connection.php';
     require '../private/checkLogin.php';
+
+    $cargo = $_SESSION['cargo'];
+    $equipa = $_SESSION['equipa'];
+
 ?>
 
 <!DOCTYPE html>
@@ -48,8 +52,12 @@
                 }
             ?>
         </div><br>
-
-        <a href="form_add.php"><button class="botao" id="btn_karol"><span>Adicionar Pioneiro</span></button></a>
+        
+        <div>
+            <?php if (($cargo === "Guia" || $cargo === "Subguia") && $equipa === "Karol Wojtyla"): ?>
+                <a href="form_add.php?equipa=Karol Wojtyla"><button class="botao" id="btn_karol" onclick=sendKarol()><span>Adicionar Pioneiro</span></button></a>
+            <?php endif; ?>
+        </div>
     </div>
 </body>
 </html>

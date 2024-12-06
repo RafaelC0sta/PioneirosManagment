@@ -1,6 +1,9 @@
 <?php 
     require '../private/connection.php';
     require '../private/checkLogin.php';
+
+    $cargo = $_SESSION['cargo'];
+    $equipa = $_SESSION['equipa'];
 ?>
 
 <!DOCTYPE html>
@@ -50,8 +53,11 @@
             <br>
         </div>
         
-
-        <a href="form_add.php"><button class="botao" id="btn_salgueiro"><span>Adicionar Pioneiro</span></button></a>
+        <div>
+            <?php if (($cargo === "Guia" || $cargo === "Subguia") && $equipa === "Salgueiro Maia"): ?>
+                <a href="form_add.php?equipa=Salgueiro Maia"><button class="botao" id="btn_salgueiro"><span>Adicionar Pioneiro</span></button></a>
+            <?php endif; ?>
+        </div>
     </div>
 </body>
 </html>

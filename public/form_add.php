@@ -1,5 +1,13 @@
 <?php 
     require '../private/connection.php';
+
+    if (!isset($_GET['equipa'])) {
+        header("Location: ../equipas.php");
+        exit;
+    }
+
+    $equipa = $_GET['equipa'];
+
 ?>
 
 <!DOCTYPE html>
@@ -13,16 +21,13 @@
 <?php include('header.php'); ?>
 <body>
     <div class="body">
+        <h2><?= htmlspecialchars($equipa)?></h2>
         <form action="../private/add_pioneiro.php" method="post">
             <label>Nome do Pioneiro: </label><input type="text" name="nome"><br>
             <label>Numero de Identificacao do CNE: </label><input type="number" name="id_cne"><br>
             <label>Data de Nascimento: </label><input type="date" name="dt_nascimento"><br>
-            <label for="equipa">Euipa:</label>
-            <select name="equipa" id="equipa">
-                <option value="Karol Wojtyla">Karol Wojtyla</option>
-                <option value="Nelson Mandela">Nelson Mandela</option>
-                <option value="Salgueiro Maia">Salgueiro Maia</option>
-            </select> <br>
+            <label>Equipa: </label>
+            <input type="text" name="equipa" value="<?= htmlspecialchars($equipa)?>" readonly><br>
             <label for="cargo">Cargo:</label>
             <select id="cargo" name="cargo">
                 <option value="guia">Guia</option>
