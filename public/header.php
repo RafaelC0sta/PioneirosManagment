@@ -1,4 +1,5 @@
 <?php
+    // este if foi para resolver um pequeno bug -> overflow de requests para o login
     if (session_status() === PHP_SESSION_NONE) {
         session_start();
     }
