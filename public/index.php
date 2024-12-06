@@ -1,7 +1,7 @@
 <?php
     require '../private/checkLogin.php';
 
-    $username = $_SESSION['pioneiro'];
+    $nome = $_SESSION['pioneiro'];
     $cargo = $_SESSION['cargo'];
     $equipa = $_SESSION['equipa'];
 ?>
@@ -17,7 +17,7 @@
 <?php include("header.php"); ?>
 <body>
     <div class="body">
-        <h1>Olá, <?= htmlspecialchars($username); ?>!</h1>
+        <h1>Olá, <?= htmlspecialchars($nome); ?>!</h1>
         <h2><?= htmlspecialchars($cargo); ?></h2>
         <h2><?= htmlspecialchars($equipa); ?></h2>
     </div>

@@ -4,10 +4,10 @@
     }
 
     if (isset($_SESSION['pioneiro'])) {
-        $username = $_SESSION['pioneiro'];
+        $nome = $_SESSION['pioneiro'];
         $cargo = $_SESSION['cargo'];
     } else {
-        $username = "";
+        $nome = "";
         $cargo = "";
     }
 ?>
@@ -29,7 +29,7 @@
         <li><a href="#">Apoio</a></li>
     </ul>
     <ul class="menu_direita">
-        <li><p style="color: white;"><?= htmlspecialchars($username); ?></p></li>
+        <li><p style="color: white;"><?= htmlspecialchars($nome); ?></p></li>
         <li><a href="../private/logout.php">logout</a></li>
     </ul>
 </header>
