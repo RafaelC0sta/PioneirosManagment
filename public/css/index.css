@@ -5,6 +5,12 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.4;
+}
+
 .body { 
     padding: 1%;
 }
@@ -112,7 +118,7 @@ section {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 30px;
     width: 100%;
-    max-width: 500px;
+    max-width: 40rem;
     text-align: center;
 }
 
@@ -164,6 +170,54 @@ section {
     background: #0056b3;
 }
 
+.formAdd {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1.25rem;
+    max-width: 50rem;
+    margin: auto;
+}
+
+.formAdd h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.formAdd label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #555;
+}
+
+.formAdd input[type="text"],
+.formAdd input[type="number"],
+.formAdd input[type="date"],
+.formAdd textarea,
+.formAdd select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.formAdd input[type="text"]:focus,
+.formAdd input[type="number"]:focus,
+.formAdd input[type="date"]:focus,
+.formAdd textarea:focus,
+.formAdd select:focus {
+    border-color: #007BFF;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+
 /* Adicionar responsividade */
 @media (max-width: 480px) {
     .login {
@@ -171,6 +225,14 @@ section {
     }
 
     .login h2 {
+        font-size: 20px;
+    }
+
+    .formAdd {
+        padding: 15px; 
+    }
+
+    .formAdd h2 {
         font-size: 20px;
     }
 }
