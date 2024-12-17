@@ -9,6 +9,9 @@
     } else {
         $nome = "";
     }
+
+    $primeiroNome = strtok($nome, " ");
+
 ?>
 
 
@@ -21,15 +24,26 @@
     <link rel="stylesheet" href="css/header.css">
 </head>
 <header>
-    <ul class="menu_esquerda">
+    <button class="botao-menu" id="botao_menu">
+        ☰
+    </button>
+    <ul class="menu_esquerda" id="menu">
         <li><a href="index.php">Home</a></li>
         <li><a href="equipas.php">Equipas</a></li>
         <li><a href="#">Calendário</a></li>
         <li><a href="#">Apoio</a></li>
     </ul>
-    <ul class="menu_direita">
-        <li><p style="color: white;"><?= htmlspecialchars($nome); ?></p></li>
+    <ul class="menu_direita" id="menu">
+        <li><p style="color: white;"><?= htmlspecialchars($primeiroNome); ?></p></li>
         <li><a href="../private/logout.php">logout</a></li>
     </ul>
 </header>
 </html>
+<script>
+    const menuToggle = document.getElementById('botao_menu');
+    const menu = document.querySelectorAll('#menu');
+
+    menuToggle.addEventListener('click', () => {
+        menu.forEach(menuItem => menuItem.classList.toggle('show'));
+    });
+</script>
