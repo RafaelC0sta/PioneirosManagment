@@ -13,7 +13,7 @@ header {
     font-weight: bold;
     background-color: var(--azulPioneiros);
     width: 100%;
-    padding: 1% 6%;
+    padding: 1% 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
