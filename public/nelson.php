@@ -1,6 +1,6 @@
 <?php 
-    require '../private/connection.php';
     require '../private/checkLogin.php';
+    require '../private/connection.php';
 
     $cargo = $_SESSION['cargo'];
     $equipa = $_SESSION['equipa'];
@@ -21,7 +21,7 @@
         <div class="tabelaPioneiros">
             <h2>Nelson</h2>
             <?php 
-                $selectPioneiros = "SELECT nome, id_cne, dt_nascimento, cargo, etapa_progresso, noites_campo, doencas FROM pioneiros where equipa='Nelson Mandela'";
+                $selectPioneiros = "SELECT * FROM pioneiros where equipa='Nelson Mandela'";
                 $result = $connection->query($selectPioneiros);
 
                 if ($result->num_rows > 0) {
@@ -35,6 +35,7 @@
                                     <th>Etapa de Progresso</th>
                                     <th>Noites de Campo</th>
                                     <th>Doenças</th>
+                                    <th></th>
                                 </tr>
                             </thead>
                             <tbody>";
@@ -47,6 +48,9 @@
                                 <td data-label='Etapa de Progresso'>{$row['etapa_progresso']}</td>
                                 <td data-label='Noites de Campo'>{$row['noites_campo']}</td>
                                 <td data-label='Doenças'>{$row['doencas']}</td>
+                                <td>
+                                    <a href='form_update.php?id={$row['id']}'>editar</a>
+                                </td>
                             </tr>";
                     }
 

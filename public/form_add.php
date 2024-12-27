@@ -1,4 +1,5 @@
 <?php 
+    require '../private/checkLogin.php';
     require '../private/connection.php';
 
     if (!isset($_GET['equipa'])) {
