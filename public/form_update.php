@@ -24,16 +24,16 @@
                 <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
 
                 <label>Nome do Pioneiro: </label>
-                <input type="text" name="nome" value="<?php echo $row['nome'] ?>"><br>
+                <input type="text" name="nome" value="<?php echo $row['nome']; ?>"><br>
 
                 <label>Numero de Identificacao do CNE: </label>
-                <input type="number" name="id_cne" value="<?php echo $row['id_cne'] ?>"><br>
+                <input type="number" name="id_cne" value="<?php echo $row['id_cne']; ?>"><br>
 
                 <label>Data de Nascimento: </label>
-                <input type="date" name="dt_nascimento" value="<?php echo $row['dt_nascimento'] ?>"><br>
+                <input type="date" name="dt_nascimento" value="<?php echo $row['dt_nascimento']; ?>"><br>
 
                 <label>Equipa: </label>
-                <input type="text" name="equipa" value="<?= htmlspecialchars($row['equipa'])?>" readonly><br>
+                <input type="text" name="equipa" value="<?= htmlspecialchars($row['equipa']); ?>" readonly><br>
                 
                 <label for="cargo">Cargo:</label>
                 <select id="cargo" name="cargo">
@@ -56,7 +56,7 @@
                 </select><br>
 
                 <label>Noites de Campo: </label>
-                <input type="number" name="noitescampo" id="noitescampo" value="<?php echo $row['noites_campo'] ?>"><br>
+                <input type="number" name="noitescampo" id="noitescampo" value="<?php echo $row['noites_campo']; ?>"><br>
                 
                 <label>Doenças:</label>
                 <textarea id="doencas" name="doencas" rows="3" cols="50"><?php echo htmlspecialchars($row['doencas']); ?></textarea><br>
