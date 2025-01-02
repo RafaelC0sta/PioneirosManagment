@@ -1,3 +1,7 @@
+<?php 
+    require '../private/checkLogin.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,19 +13,16 @@
 <?php include('header.php')?>
 <body>
     <div class="body">
-        <div class="apresentacao">
+        <div class="documentos">
             <div>
                 <h2>Apresentação 2</h2>
-                <br>
                 <a href="../private/download.php?file=Apresentação 2.pdf">
                     <button class="botao">Apresentação 2</button>
                 </a>
-                <br>
             </div>
             <br>
             <div>
                 <h2>Resumo</h2>
-                <br>
                 <a href="../private/download.php?file=provas_.pdf">
                     <button class="botao">Resumo</button>
                 </a>
