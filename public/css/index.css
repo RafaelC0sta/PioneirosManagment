@@ -27,7 +27,7 @@ body {
 .tabelasPioneiros th, .tabelasPioneiros td {
     border: 1px solid black;
     text-align: center;
-    padding: 8px;
+    padding: 6px;
 }
 
 .tabelasPioneiros h2 {
@@ -228,6 +228,7 @@ section {
 .documentos h2 {
     margin-bottom: 0.5rem;
 }
+
 
 @media (max-width: 768px) {
     .equipas-list {

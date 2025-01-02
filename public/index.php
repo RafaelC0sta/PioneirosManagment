@@ -18,8 +18,8 @@
 <body>
     <div class="body">
         <h1>Olá, <?= htmlspecialchars($nome); ?>!</h1>
-        <h2><?= htmlspecialchars($cargo); ?></h2>
-        <h2><?= htmlspecialchars($equipa); ?></h2>
+        <h2>Cargo: <?= htmlspecialchars($cargo); ?></h2>
+        <h2>Equipa: <?= htmlspecialchars($equipa); ?></h2>
     </div>
 </body>
 </html>

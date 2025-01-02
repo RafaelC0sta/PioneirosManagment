@@ -26,19 +26,19 @@
             <h2><?= htmlspecialchars($equipa)?></h2>
             <form action="../private/add_pioneiro.php" method="post">
                 <label>Nome do Pioneiro: </label>
-                <input type="text" name="nome"><br>
+                <input type="text" name="nome" required><br>
 
                 <label>Numero de Identificacao do CNE: </label>
-                <input type="number" name="id_cne"><br>
+                <input type="number" name="id_cne" required><br>
 
                 <label>Data de Nascimento: </label>
-                <input type="date" name="dt_nascimento"><br>
+                <input type="date" name="dt_nascimento" required><br>
 
                 <label>Equipa: </label>
                 <input type="text" name="equipa" value="<?= htmlspecialchars($equipa)?>" readonly><br>
                 
                 <label for="cargo">Cargo:</label>
-                <select id="cargo" name="cargo">
+                <select id="cargo" name="cargo" required>
                     <option value="guia">Guia</option>
                     <option value="subguia">Sub-Guia</option>
                     <option value="secretario">Secretário</option>
@@ -50,7 +50,7 @@
                 </select><br>
 
                 <label for="etapaprogresso">Etapa do Progresso</label>
-                <select id="etapaprogresso" name="etapaprogresso">
+                <select id="etapaprogresso" name="etapaprogresso" required>
                     <option value="desprendimento">Desprendimento</option>
                     <option value="conhecimento">Conhecimento</option>
                     <option value="vontade">Vontade</option>
@@ -58,10 +58,10 @@
                 </select><br>
 
                 <label>Noites de Campo: </label>
-                <input type="number" name="noitescampo" id="noitescampo"><br>
+                <input type="number" name="noitescampo" id="noitescampo" required><br>
                 
                 <label>Doenças:</label>
-                <textarea id="doencas" name="doencas" rows="3" cols="50"></textarea><br>
+                <textarea id="doencas" name="doencas" rows="3" cols="50" required></textarea><br>
 
                 <input type="submit" value="Adicionar" class="botao">
             </form>

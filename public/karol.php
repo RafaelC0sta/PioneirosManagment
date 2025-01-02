@@ -14,6 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Karol Wojtyla</title>
     <link rel="stylesheet" href="css/index.css">
+    <script src="../public/js/funcoes.js"></script>
 </head>
 <?php include('header.php'); ?>
 <body>
@@ -38,7 +39,7 @@
                             <th>Noites de Campo</th>
                             <th>Doenças</th>
                             <?php if (($cargo === "Guia" || $cargo === "Subguia") && $equipa === "Karol Wojtyla"): ?>
-                                <th>Ações</th>
+                                <th colspan="2">Ações</th>
                             <?php endif; ?>
                         </tr>
                     </thead>
@@ -56,8 +57,10 @@
                                 
                                 // Exibir a coluna "editar" apenas se a condição for verdadeira
                                 if (($cargo === "Guia" || $cargo === "Subguia") && $equipa === "Karol Wojtyla") {
-                                    echo "<td data-label='Ações'><a href='form_update.php?id=" . htmlspecialchars($row['id']) . "'>editar</a></td>";
+                                    echo "<td data-label='Ações'><a href='form_update.php?id=" . htmlspecialchars($row['id']) . "'><div class='icon'><img src='../images/editing.png' alt='edit_icon' style='width: 25px;'></div></a></td>";
+                                    echo "<td data-label='Ações'><a href='#' onclick=confirmDelete()><img alt='deleteIcon' src='../images/delete.png' style='width: 25px;'></a></td>";
                                 }
+                                
                                 echo "</tr>";
                             }
                         ?>
