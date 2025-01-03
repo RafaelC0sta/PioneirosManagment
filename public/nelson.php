@@ -57,7 +57,7 @@
                                 // Exibir a coluna "editar" apenas se a condição for verdadeira
                                 if (($cargo === "Guia" || $cargo === "Subguia") && $equipa === "Nelson Mandela") {
                                     echo "<td data-label='Ações'><a href='form_update.php?id=" . htmlspecialchars($row['id']) . "'><img src='../images/editing.png' style='width: 25px;'></a></td>";
-                                    echo "<td data-label='Ações'><a href='#' onclick=confirmDelete(" . htmlspecialchars($row['id']) . "><img alt='deleteIcon' src='../images/delete.png' style='width: 25px;'></a></td>";
+                                    echo "<td data-label='Ações'><a href='#' onclick=confirmDelete(" . htmlspecialchars($row['id']) . ")><img alt='deleteIcon' src='../images/delete.png' style='width: 25px;'></a></td>";
                                 }
                                 echo "</tr>";
                             }
