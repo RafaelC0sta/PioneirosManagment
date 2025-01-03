@@ -14,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Karol Wojtyla</title>
     <link rel="stylesheet" href="css/index.css">
-    <script src="../public/js/funcoes.js"></script>
+    <!--<script src="../public/js/funcoes.js"></script>-->
 </head>
 <?php include('header.php'); ?>
 <body>
@@ -76,7 +76,7 @@
             <?php if (($cargo === "Guia" || $cargo === "Subguia") && $equipa === "Karol Wojtyla"): ?>
                 <a href="form_add.php?equipa=Karol Wojtyla"><button class="botao" id="btn_karol"><span>Adicionar Pioneiro</span></button></a>
             <?php endif; ?>
-        </div>
+        </div>        
     </div>
 </body>
 </html>

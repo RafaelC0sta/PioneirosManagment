@@ -5,4 +5,6 @@ function confirmDelete() {
     } else {
         texto = "Nao apagar";
     }
+
+    document.getElementById("textoTeste").innerHTML = texto;
 }
