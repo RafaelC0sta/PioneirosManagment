@@ -1,8 +1,6 @@
-function confirmDelete() {
+function confirmDelete(id) {
     let texto = "DESEJA MESMO APAGAR ESTE REGISTO ?";
-    if (confirm(texto) == true) {
-        texto = "Apagar";
-    } else {
-        texto = "Nao apagar";
+    if (confirm(texto)) {
+        window.location.href = `../private/delete_pioneiro.php?id=${id}`;
     }
 }

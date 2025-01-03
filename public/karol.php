@@ -14,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Karol Wojtyla</title>
     <link rel="stylesheet" href="css/index.css">
-    <!--<script src="../public/js/funcoes.js"></script>-->
+    <script src="../public/js/funcoes.js"></script>
 </head>
 <?php include('header.php'); ?>
 <body>
@@ -23,7 +23,7 @@
         <div class="tabelaPioneiros">
             <h2>Karol Wojtyla</h2><br>
             <?php 
-                $selectPioneiros = "SELECT * FROM pioneiros where equipa='Karol Wojtyla'";
+                $selectPioneiros = "SELECT * FROM pioneiros where equipa='Karol Wojtyla' order by cargo asc";
                 $result = $connection->query($selectPioneiros);
 
                 if ($result && $result->num_rows > 0):
@@ -58,7 +58,7 @@
                                 // Exibir a coluna "editar" apenas se a condição for verdadeira
                                 if (($cargo === "Guia" || $cargo === "Subguia") && $equipa === "Karol Wojtyla") {
                                     echo "<td data-label='Ações'><a href='form_update.php?id=" . htmlspecialchars($row['id']) . "'><div class='icon'><img src='../images/editing.png' alt='edit_icon' style='width: 25px;'></div></a></td>";
-                                    echo "<td data-label='Ações'><a href='#' onclick=confirmDelete()><img alt='deleteIcon' src='../images/delete.png' style='width: 25px;'></a></td>";
+                                    echo "<td data-label='Ações'><a href='#' onclick=confirmDelete(" . htmlspecialchars($row['id']) . ")><img alt='deleteIcon' src='../images/delete.png' style='width: 25px;'></a></td>";
                                 }
                                 
                                 echo "</tr>";

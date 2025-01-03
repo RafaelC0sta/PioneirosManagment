@@ -22,7 +22,7 @@
         <div class="tabelaPioneiros">
             <h2>Salgueiro Maia</h2><br>
             <?php 
-                $selectPioneiros = "SELECT * FROM pioneiros where equipa='Salgueiro Maia'";
+                $selectPioneiros = "SELECT * FROM pioneiros where equipa='Salgueiro Maia' order by cargo asc";
                 $result = $connection->query($selectPioneiros);
 
                 if ($result && $result->num_rows > 0):
@@ -57,7 +57,7 @@
                                 // Exibir a coluna "editar" apenas se a condição for verdadeira
                                 if (($cargo === "Guia" || $cargo === "Subguia") && $equipa === "Salgueiro Maia") {
                                     echo "<td data-label='Ações'><a href='form_update.php?id=" . htmlspecialchars($row['id']) . "'><img src='../images/editing.png' style='width: 25px;'></a></td>";
-                                    echo "<td data-label='Ações'><a href='#' onclick=confirmDelete()><img alt='deleteIcon' src='../images/delete.png' style='width: 25px;'></a></td>";
+                                    echo "<td data-label='Ações'><a href='#' onclick=confirmDelete(" . htmlspecialchars($row['id']) . ")><img alt='deleteIcon' src='../images/delete.png' style='width: 25px;'></a></td>";
                                 }
                                 echo "</tr>";
                             }
