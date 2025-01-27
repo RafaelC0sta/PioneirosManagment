@@ -9,7 +9,7 @@
     font-family: 'Roboto', sans-serif;
 }
 
-header {
+header, nav {
     font-weight: bold;
     background-color: var(--azulPioneiros);
     width: 100%;
@@ -32,7 +32,7 @@ header {
     display: flex;
     list-style: none;
     justify-content: space-between;
-    align-items: center;
+    align-items: center
 }
 
 .menu_esquerda li, .menu_direita li {
@@ -42,6 +42,16 @@ header {
 
 .menu_esquerda li a, .menu_direita li a{
     text-decoration: none;
+    color: white;
+}
+
+.menu_meio {
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;  
+}
+
+.menu_meio h1{
     color: white;
 }
 

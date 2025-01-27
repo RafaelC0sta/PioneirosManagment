@@ -4,10 +4,14 @@
         session_start();
     }
 
-    if (isset($_SESSION['pioneiro'])) {
+    $session = isset($_SESSION['pioneiro']);
+
+    if ($session) {
         $nome = $_SESSION['pioneiro'];
+        $cargo = $_SESSION['cargo'];
     } else {
         $nome = "";
+        $cargo = "";
     }
 
     $primeiroNome = strtok($nome, " ");
@@ -16,18 +20,27 @@
 
 <link rel="stylesheet" href="css/header.css">
 <header>
-    <button class="botao-menu" id="botao_menu">
-        ☰
-    </button>
-    <ul class="menu_esquerda" id="menu">
-        <li><a href="index.php">Home</a></li>
-        <li><a href="equipas.php">Equipas</a></li>
-        <li><a href="apoio.php">Resumos</a></li>
-    </ul>
-    <ul class="menu_direita" id="menu">
-        <li><p style="color: white;"><?= htmlspecialchars($primeiroNome); ?></p></li>
-        <li><a href="../private/logout.php">logout</a></li>
-    </ul>
+    <?php 
+        if ($session): 
+    ?>
+        <button class="botao-menu" id="botao_menu">
+            ☰
+        </button>
+        <ul class="menu_esquerda" id="menu">
+            <li><a href="index.php">Home</a></li>
+            <li><a href="equipas.php">Equipas</a></li>
+            <li><a href="apoio.php">Resumos</a></li>
+            <li><a href="cargos/<?=$cargo.'/'?>"><?=htmlspecialchars($cargo) ?></a></li>
+        </ul>
+        <ul class="menu_direita" id="menu">
+            <li><a href="perfil.php" color: white;"><?= htmlspecialchars($primeiroNome); ?></a></li>
+            <li><a href="../private/logout.php">logout</a></li>
+        </ul>
+    <?php
+        else:
+            echo "<div class='menu_meio'><h1>Pioneiros Managment</h1></div>";
+        endif;
+    ?>
 </header>
 <script>
     // este javascript faz com que apareça o botao no lado do header (em mobile)

@@ -51,7 +51,7 @@
     <link rel="stylesheet" href="css/index.css">
 </head>
 <?php include("header.php") ?>
-<body>
+<body class="loginBody">
     <div class="body">
         <section class="login">
             <div class="loginForm">
