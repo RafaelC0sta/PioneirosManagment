@@ -120,10 +120,6 @@ section {
     margin: auto;
 }
 
-.loginBack {
-    background-image: url('../../images/pioneirosBack.jpg') no-repeat;
-}
-
 .login {
     background: #fff;
     border-radius: 10px;
@@ -235,6 +231,10 @@ section {
 
 
 @media (max-width: 768px) {
+    .body { 
+        padding: 1%;
+    }
+
     .equipas-list {
         grid-template-columns: 1fr;
         gap: 15px;
@@ -252,6 +252,10 @@ section {
 }
 
 @media (max-width: 480px) {
+    .body { 
+        padding: 1%;
+    }
+
     .login {
         padding: 20px;
     }

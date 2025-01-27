@@ -15,10 +15,9 @@
     }
 
     $primeiroNome = strtok($nome, " ");
-
 ?>
 
-<link rel="stylesheet" href="css/header.css">
+<link rel="stylesheet" href="/pioneirosequipas/public/css/header.css">
 <header>
     <?php 
         if ($session): 
@@ -27,14 +26,14 @@
             ☰
         </button>
         <ul class="menu_esquerda" id="menu">
-            <li><a href="index.php">Home</a></li>
-            <li><a href="equipas.php">Equipas</a></li>
-            <li><a href="apoio.php">Resumos</a></li>
-            <li><a href="cargos/<?=$cargo.'/'?>"><?=htmlspecialchars($cargo) ?></a></li>
+            <li><a href="/pioneirosequipas/public/">Home</a></li>
+            <li><a href="/pioneirosequipas/public/equipas.php">Equipas</a></li>
+            <li><a href="/pioneirosequipas/public/apoio.php">Resumos</a></li>
+            <li><a href="/pioneirosequipas/public/cargos/<?=$cargo.'/'?>"><?=htmlspecialchars($cargo) ?></a></li>
         </ul>
         <ul class="menu_direita" id="menu">
-            <li><a href="perfil.php" color: white;"><?= htmlspecialchars($primeiroNome); ?></a></li>
-            <li><a href="../private/logout.php">logout</a></li>
+            <li><a href="/pioneirosequipas/public/perfil.php" color: white;"><?= htmlspecialchars($primeiroNome); ?></a></li>
+            <li><a href="/pioneirosequipas/private/logout.php">logout</a></li>
         </ul>
     <?php
         else:

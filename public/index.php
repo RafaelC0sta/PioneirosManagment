@@ -1,5 +1,5 @@
 <?php
-    require '../private/checkLogin.php';
+    require "../private/checkLogin.php";
 
     $nome = $_SESSION['pioneiro'];
     $cargo = $_SESSION['cargo'];
@@ -12,7 +12,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pioneiros Managment</title>
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="/pioneirosequipas/public/css/index.css">
 </head>
 <?php include("header.php"); ?>
 <body>
