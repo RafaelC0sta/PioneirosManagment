@@ -58,8 +58,8 @@
                 <label>Noites de Campo: </label>
                 <input type="number" name="noitescampo" id="noitescampo" value="<?php echo $row['noites_campo']; ?>"><br>
                 
-                <label>Doenças:</label>
-                <textarea id="doencas" name="doencas" rows="3" cols="50"><?php echo htmlspecialchars($row['doencas']); ?></textarea><br>
+                <label>Observações:</label>
+                <textarea id="observacoes" name="observacoes" rows="3" cols="50"><?php echo htmlspecialchars($row['observacoes']); ?></textarea><br>
 
                 <input type="submit" value="Editar" class="botao">
             </form>

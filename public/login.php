@@ -50,27 +50,24 @@
     <title>Login</title>
     <link rel="stylesheet" href="css/index.css">
 </head>
-<?php include("header.php") ?>
 <body class="loginBg">
     <div class="loginFlex">
-        <div class="body">
-            <section class="login">
-                <div class="loginForm">
-                    <h2>Login</h2>
-                    <form action="login.php" method="post">
-                        <label for="username">Username</label>
-                        <input type="text" name="username" id="username">
-                        <label for="password">Password</label>
-                        <input type="password" name="password" id="password">
-                        <input type="submit" value="Login">
-                    </form>
-                </div>
-                <br>
-                <?php if ($erro): ?>
-                    <p style="color: red;"><?=htmlspecialchars($erro) ?></p>
-                <?php endif; ?>
-            </section>
-        </div>
+        <section class="login">
+            <div class="loginForm">
+                <h2>Login</h2>
+                <form action="login.php" method="post">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" id="username">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password">
+                    <input type="submit" value="Login">
+                </form>
+            </div>
+            <br>
+            <?php if ($erro): ?>
+                <p style="color: red;"><?=htmlspecialchars($erro) ?></p>
+            <?php endif; ?>
+        </section>
     </div>
 </body>
 </html>

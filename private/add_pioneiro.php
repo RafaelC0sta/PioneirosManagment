@@ -8,14 +8,14 @@
     $cargo = $_POST['cargo'];
     $etapaprogresso = $_POST['etapaprogresso'];
     $noitescampo = $_POST['noitescampo'];
-    $doencas = $_POST['doencas'];
+    $observacoes = $_POST['observacoes'];
 
     $equipasValidas = ['Karol Wojtyla', 'Nelson Mandela', 'Salgueiro Maia'];
     if (!in_array($equipa, $equipasValidas)) {
         die("Tentativa inválida de alterar a equipa!");
     }
     
-    $stmt = $connection->prepare("INSERT INTO pioneiros (nome, id_cne, dt_nascimento, equipa, cargo, etapa_progresso, noites_campo, doencas) VALUES (?, ?, ?, ?, ?, ?, ?, ?) ");
+    $stmt = $connection->prepare("INSERT INTO pioneiros (nome, id_cne, dt_nascimento, equipa, cargo, etapa_progresso, noites_campo, observacoes) VALUES (?, ?, ?, ?, ?, ?, ?, ?) ");
     $stmt->bind_param("sissssis", $nome, $id_cne, $dt_nascimento, $equipa, $cargo, $etapaprogresso, $noitescampo, $doencas);
     
 

@@ -8,11 +8,11 @@
     $cargo = $_POST['cargo'];
     $etapaprogresso = $_POST['etapaprogresso'];
     $noitescampo = $_POST['noitescampo'];
-    $doencas = $_POST['doencas'];
+    $observacoes = $_POST['observacoes'];
 
     
-    $stmt = $connection->prepare("UPDATE pioneiros SET nome=?, id_cne=?, dt_nascimento=?, cargo=?, etapa_progresso=?, noites_campo=?, doencas=? WHERE id=?");
-    $stmt->bind_param("sisssisi", $nome, $id_cne, $dt_nascimento, $cargo, $etapaprogresso, $noitescampo, $doencas, $id);
+    $stmt = $connection->prepare("UPDATE pioneiros SET nome=?, id_cne=?, dt_nascimento=?, cargo=?, etapa_progresso=?, noites_campo=?, observacoes=? WHERE id=?");
+    $stmt->bind_param("sisssisi", $nome, $id_cne, $dt_nascimento, $cargo, $etapaprogresso, $noitescampo, $observacoes, $id);
     
 
     if (!$stmt->execute()) {

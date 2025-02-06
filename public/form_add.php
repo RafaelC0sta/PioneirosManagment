@@ -60,8 +60,8 @@
                 <label>Noites de Campo: </label>
                 <input type="number" name="noitescampo" id="noitescampo" required><br>
                 
-                <label>Doenças:</label>
-                <textarea id="doencas" name="doencas" rows="3" cols="50" required></textarea><br>
+                <label>Observações:</label>
+                <textarea id="observacoes" name="observacoes" rows="3" cols="50" required></textarea><br>
 
                 <input type="submit" value="Adicionar" class="botao">
             </form>

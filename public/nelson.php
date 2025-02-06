@@ -36,7 +36,7 @@
                             <th>Cargo</th>
                             <th>Etapa de Progresso</th>
                             <th>Noites de Campo</th>
-                            <th>Doenças</th>
+                            <th>Observações</th>
                             <?php if (($cargo === "Guia" || $cargo === "Subguia") && $equipa === "Nelson Mandela"): ?>
                                 <th colspan="2">Ações</th>
                             <?php endif; ?>
@@ -52,7 +52,7 @@
                                 echo "<td data-label='Cargo'>" . htmlspecialchars($row['cargo']) . "</td>";
                                 echo "<td data-label='Etapa de Progresso'>" . htmlspecialchars($row['etapa_progresso']) . "</td>";
                                 echo "<td data-label='Noites de Campo'>" . htmlspecialchars($row['noites_campo']) . "</td>";
-                                echo "<td data-label='Doenças'>" . htmlspecialchars($row['doencas']) . "</td>";
+                                echo "<td data-label='Observações'>" . htmlspecialchars($row['observacoes']) . "</td>";
                                 
                                 // Exibir a coluna "editar" apenas se a condição for verdadeira
                                 if (($cargo === "Guia" || $cargo === "Subguia") && $equipa === "Nelson Mandela") {
