@@ -250,6 +250,35 @@ section {
 }
 
 
+.progress-container {
+    width: 0%;
+    background-color: #aaa;
+    border-radius: 8px;
+    overflow: hidden;
+    height: 30px;
+}
+
+.progress-bar {
+    width: 0%;
+    height: 100%;
+    background-color: #522c03;
+    text-align: center;
+    line-height: 30px;
+    color: white;
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+/* Responsive  */
+
 @media (max-width: 768px) {
     .body { 
         padding: 3%;

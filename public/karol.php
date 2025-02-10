@@ -60,7 +60,6 @@
                                     echo "<td data-label='Ações'><a href='form_update.php?id=" . htmlspecialchars($row['id']) . "'><div class='icon'><img src='../images/editing.png' alt='edit_icon' style='width: 25px;'></div></a></td>";
                                     echo "<td data-label='Ações'><a href='#' onclick=confirmDelete(" . htmlspecialchars($row['id']) . ")><img alt='deleteIcon' src='../images/delete.png' style='width: 25px;'></a></td>";
                                 }
-                                
                                 echo "</tr>";
                             }
                         ?>

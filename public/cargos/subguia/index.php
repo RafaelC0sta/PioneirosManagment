@@ -9,7 +9,7 @@
 <?php include("../../header.php")?>
 <body>
     <div class="body">
-        <?php echo "Subguia" ?>
+        <?php echo "Subguia lindo" ?>
     </div>
 </body>
 </html>
