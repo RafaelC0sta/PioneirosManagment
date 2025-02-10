@@ -9,7 +9,8 @@
 <?php include("../../header.php")?>
 <body>
     <div class="body">
-        <?php echo "Secretario" ?>
+        <h1>Presencas</h1>
+        
     </div>
 </body>
 </html>

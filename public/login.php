@@ -25,7 +25,6 @@
         
             $resultadoCargoEquipa = $stmt2->get_result();
             $pioneiroInfo = $resultadoCargoEquipa->fetch_assoc();
-        
             if ($pioneiroInfo) {
                 $_SESSION['pioneiro'] = $pioneiroInfo['nome'];
                 $_SESSION['cargo'] = $pioneiroInfo['cargo'];
