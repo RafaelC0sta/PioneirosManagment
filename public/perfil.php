@@ -2,15 +2,14 @@
     require "../private/checkLogin.php";
     
     if (isset($_SESSION['pioneiro'])) {
-        //$nome = $_SESSION['pioneiro'];
+        $nome = $_SESSION['pioneiro'];
         $noites_campo = $_SESSION['noites_campo'];
     } else {
         $nome = "";
         $noites_campo = "";
     }
-
-    $noites_campo = 192;
-
+    
+    $mostrarMSG = false;
     $insigniaAntes = "";    
     $insigniaDepois = "";
     $checkpoint = 0;
@@ -48,10 +47,10 @@
         $min = 100;
         $checkpoint = 200;
         $cor = "f76f00";
+    } else {
+        $mostrarMSG = true;
+        $msg = "Ja conseguista a insignia de 200 noites, queres mais oq ? xD";
     }
-
-    
-
 ?>
 
 <!DOCTYPE html>
@@ -66,7 +65,8 @@
 <body>
     <div class="body">
         <h1>Perfil - <?= htmlspecialchars($nome); ?></h1><br>
-        Noites Campo:
+        Noites de Campo:
+        <?php if (!$mostrarMSG):?>
         <div class="noites-progress-container">
             <?php 
                 if ($noites_campo > 25) {
@@ -77,12 +77,17 @@
             ?>
             
             <div class="progress-container">
-                <div class="progress-bar" style="width: <?php echo (($noites_campo - $min) / ($checkpoint - $min)) * 100?>%; background-color: #<?php echo $cor ?>; color: <?php echo $corTexto ?>">
-                    <?php echo $noites_campo?>
-                </div>
+                    <div class="progress-bar" style="width: <?php echo (($noites_campo - $min) / ($checkpoint - $min)) * 100?>%; background-color: #<?php echo $cor ?>; color: <?php echo $corTexto ?>">
+                        <?php echo $noites_campo?>
+                    </div>
             </div> 
             <img src="<?php echo $insigniaDepois ?>" alt="insiniaDepois" class="imagem-insigniaDepois">
         </div>
+        <?php   
+            else:
+                echo $msg;
+            endif;
+        ?>
     </div>
 </body>
 </html>

@@ -65,7 +65,7 @@
             </div>
             <br>
             <?php if ($erro): ?>
-                <p style="color: red;"><?=htmlspecialchars($erro) ?></p>
+                <p style="color: red;"><?= htmlspecialchars($erro) ?></p>
             <?php endif; ?>
         </section>
     </div>
