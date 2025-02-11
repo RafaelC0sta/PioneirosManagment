@@ -256,6 +256,7 @@ section {
     overflow: hidden;
     height: 35px;
     border: 1px solid black;
+    width: 20%;
 }
 
 .progress-bar {
@@ -266,6 +267,23 @@ section {
     height: 100%;
 }
 
+
+.noites-progress-container {
+    display: flex;
+    align-items: center;
+}
+
+.imagem-insigniaAntes, .imagem-insigniaDepois{
+    width: 5%;
+}
+
+.imagem-insigniaAntes {
+    margin-right: 1%;
+}
+
+.imagem-insigniaDepois {
+    margin-left: 1%;
+}
 
 
 
@@ -303,6 +321,14 @@ section {
 
     .loginFlex {
         padding: 0 5%;
+    }
+
+    .imagem-insigniaAntes, .imagem-insigniaDepois {
+        width: 20%;
+    }
+
+    .progress-container {
+        width: 50%;
     }
 }
 
