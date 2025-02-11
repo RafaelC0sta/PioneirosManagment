@@ -251,21 +251,19 @@ section {
 
 
 .progress-container {
-    width: 0%;
-    background-color: #aaa;
+    background-color: #bababa;
     border-radius: 8px;
     overflow: hidden;
-    height: 30px;
+    height: 35px;
+    border: 1px solid black;
 }
 
 .progress-bar {
-    width: 0%;
-    height: 100%;
-    background-color: #522c03;
     text-align: center;
     line-height: 30px;
-    color: white;
+    color: #fff;
     font-weight: bold;
+    height: 100%;
 }
 
 
