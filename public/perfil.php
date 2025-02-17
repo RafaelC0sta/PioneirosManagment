@@ -8,6 +8,7 @@
         $nome = "";
         $noites_campo = "";
     }
+
     
     $mostrarMSG = false;
     $insigniaAntes = "";    
@@ -49,7 +50,7 @@
         $cor = "f76f00";
     } else {
         $mostrarMSG = true;
-        $msg = "Ja conseguista a insignia de 200 noites, queres mais oq ? xD";
+        $msg = "Ja conseguiste a insignia de 200 noites, queres mais oq ? xD";
     }
 ?>
 
