@@ -9,7 +9,6 @@
         $noites_campo = "";
     }
 
-    
     $mostrarMSG = false;
     $insigniaAntes = "";    
     $insigniaDepois = "";
@@ -63,30 +62,33 @@
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
 </head>
 <?php include("header.php"); ?>
-<body>
-    <div class="body">
-        <h1>Perfil - <?= htmlspecialchars($nome); ?></h1><br>
-        Noites de Campo:
+<body class="bg-gray-100">
+    <div class="max-w-4xl mx-auto p-4">
+        <h1 class="text-3xl font-semibold text-center py-6">Perfil - <?= htmlspecialchars($nome); ?></h1>
+        
+        <div class="text-xl mb-4">
+            <strong>Noites de Campo:</strong>
+        </div>
+        
         <?php if (!$mostrarMSG):?>
-        <div class="noites-progress-container">
+        <div class="flex items-center justify-center space-x-4">
             <?php 
                 if ($noites_campo > 25) {
-                    echo "<img src='$insigniaAntes' alt='insgigniaAntes' class='imagem-insigniaAntes'>";
-                } else {
-                    echo "";
+                    echo "<img src='$insigniaAntes' alt='insgigniaAntes' class='w-16 h-16'>";
                 }
             ?>
             
-            <div class="progress-container">
-                    <div class="progress-bar" style="width: <?php echo (($noites_campo - $min) / ($checkpoint - $min)) * 100?>%; background-color: #<?php echo $cor ?>; color: <?php echo $corTexto ?>">
-                        <?php echo $noites_campo?>
-                    </div>
+            <div class="w-full bg-gray-300 rounded-lg h-8 relative">
+                <div class="absolute top-0 left-0 h-full text-center leading-8 font-bold text-white rounded-lg" style="width: <?php echo (($noites_campo - $min) / ($checkpoint - $min)) * 100?>%; background-color: #<?php echo $cor ?>; color: <?php echo $corTexto ?>">
+                    <?php echo $noites_campo?>
+                </div>
             </div> 
-            <img src="<?php echo $insigniaDepois ?>" alt="insiniaDepois" class="imagem-insigniaDepois">
+            
+            <img src="<?php echo $insigniaDepois ?>" alt="insiniaDepois" class="w-16 h-16">
         </div>
         <?php   
             else:
-                echo $msg;
+                echo "<div class='text-xl font-bold text-green-500'>$msg</div>";
             endif;
         ?>
     </div>

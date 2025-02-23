@@ -15,7 +15,6 @@
 
         $resultado = $stmt->get_result();
         $login = $resultado->fetch_assoc();
-        
 
         if ($login && $login['password'] === $password) {
             $queryCargoEquipa = "SELECT nome, cargo, equipa, noites_campo FROM pioneiros WHERE id = ?";
@@ -38,7 +37,6 @@
         } else {
             $erro = "Nome ou password incorretos.";
         }
-        
     }
 ?>
 
@@ -50,22 +48,28 @@
     <title>Login</title>
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
 </head>
-<body class="loginBg">
-    <div class="loginFlex">
-        <section class="login">
-            <div class="loginForm">
-                <h2>Login</h2>
-                <form action="login.php" method="post">
-                    <label for="username">Username</label>
-                    <input type="text" name="username" id="username">
-                    <label for="password">Password</label>
-                    <input type="password" name="password" id="password">
-                    <input type="submit" value="Login">
+<body class="bg-cover bg-center flex items-center justify-center h-screen" style="background-image: url('../images/bgDale.png');">
+    <div class="w-full max-w-md p-6 bg-white rounded-lg shadow-xl">
+        <section class="text-center">
+            <div class="mb-6">
+                <h2 class="text-2xl font-semibold text-gray-800 mb-4">Login</h2>
+                <form action="login.php" method="post" class="space-y-4">
+                    <div>
+                        <label for="username" class="block text-sm font-medium text-gray-600 mb-2">Username</label>
+                        <input type="text" name="username" id="username" class="w-full p-3 border border-gray-300 rounded-md text-gray-800 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500" required>
+                    </div>
+                    <div>
+                        <label for="password" class="block text-sm font-medium text-gray-600 mb-2">Password</label>
+                        <input type="password" name="password" id="password" class="w-full p-3 border border-gray-300 rounded-md text-gray-800 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500" required>
+                    </div>
+                    <div>
+                        <input type="submit" value="Login" class="w-full p-3 bg-blue-500 text-white font-semibold rounded-md cursor-pointer hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+                    </div>
                 </form>
             </div>
-            <br>
+
             <?php if ($erro): ?>
-                <p style="color: red;"><?= htmlspecialchars($erro) ?></p>
+                <p class="text-red-500"><?= htmlspecialchars($erro) ?></p>
             <?php endif; ?>
         </section>
     </div>
