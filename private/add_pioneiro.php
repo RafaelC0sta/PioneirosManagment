@@ -16,7 +16,7 @@
     }
     
     $stmt = $connection->prepare("INSERT INTO pioneiros (nome, id_cne, dt_nascimento, equipa, cargo, etapa_progresso, noites_campo, observacoes) VALUES (?, ?, ?, ?, ?, ?, ?, ?) ");
-    $stmt->bind_param("sissssis", $nome, $id_cne, $dt_nascimento, $equipa, $cargo, $etapaprogresso, $noitescampo, $doencas);
+    $stmt->bind_param("sissssis", $nome, $id_cne, $dt_nascimento, $equipa, $cargo, $etapaprogresso, $noitescampo, $observacoes);
     
 
     if (!$stmt->execute()) {
