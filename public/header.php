@@ -1,17 +1,17 @@
 <?php
     // este if foi para resolver um pequeno bug -> overflow de requests para o login
     if (session_status() === PHP_SESSION_NONE) {
-        session_start();
+      session_start();
     }
 
     $session = isset($_SESSION['pioneiro']);
 
     if ($session) {
-        $nome = $_SESSION['pioneiro'];
-        $cargo = $_SESSION['cargo'];
+      $nome = $_SESSION['pioneiro'];
+      $cargo = $_SESSION['cargo'];
     } else {
-        $nome = "";
-        $cargo = "";
+      $nome = "";
+      $cargo = "";
     }
 
     $primeiroNome = strtok($nome, " ");
@@ -34,9 +34,10 @@
     <div class="hidden md:flex md:gap-x-10">
       <a href="/pioneirosequipas/public/" class="text-lg font-semibold">Home</a>
       <a href="/pioneirosequipas/public/equipas.php" class="text-lg font-semibold">Equipas</a>
+      <a href="/pioneirosequipas/public/cargos/<?= htmlspecialchars($cargo); ?>" class="text-lg font-semibold"><?= htmlspecialchars($cargo); ?></a>
     </div>
 
-    <div class="hidden md:flex md:gap-x-8" > <!--hidden md:flex md:flex-1 md:justify-end-->
+    <div class="hidden md:flex md:gap-x-9" >
       <a href="/pioneirosequipas/public/perfil.php" class="text-lg font-semibold"><?= htmlspecialchars($primeiroNome); ?></a>
       <a href="/pioneirosequipas/private/logout.php" class="text-lg font-semibold">Log out &rarr;</a>
     </div>
@@ -45,11 +46,12 @@
   <!-- Mobile Menu -->
   <div id="mobile-menu" class="hidden absolute left-0 top-full w-full bg-blue-400 px-6 opacity-0 scale-y-0 origin-top transition-all duration-500 ease-in-out overflow-hidden shadow-lg">
     <div class="space-y-2 py-4">
-      <a href="/pioneirosequipas/public/" class="block text-md font-semibold text-white hover:bg-blue-500 p-2 rounded">Home</a>
-      <a href="/pioneirosequipas/public/equipas.php" class="block text-md font-semibold text-white hover:bg-blue-500 p-2 rounded">Equipas</a>
-      <div class="py-6">
-        <a href="/pioneirosequipas/public/perfil.php" class="block text-md font-semibold text-white hover:bg-blue-500 p-2 rounded"><?= htmlspecialchars($primeiroNome); ?></a>
-        <a href="/pioneirosequipas/private/logout.php" class="block text-md font-semibold text-white hover:bg-blue-500 p-2 rounded">Log out</a>
+      <a href="/pioneirosequipas/public/" class="border block text-md font-semibold text-white hover:bg-blue-500 p-2 rounded">Home</a>
+      <a href="/pioneirosequipas/public/equipas.php" class="border block text-md font-semibold text-white hover:bg-blue-500 p-2 rounded">Equipas</a>
+      <a href="/pioneirosequipas/public/cargos/<?= htmlspecialchars($cargo); ?>" class="border block text-md font-semibold text-white hover:bg-blue-500 p-2 rounded"><?= htmlspecialchars($cargo); ?></a>
+      <div class="py-6 space-y-1">
+        <a href="/pioneirosequipas/public/perfil.php" class="border block text-md font-semibold text-white hover:bg-blue-500 p-2 rounded"><?= htmlspecialchars($primeiroNome); ?></a>
+        <a href="/pioneirosequipas/private/logout.php" class="border block text-md font-semibold text-white hover:bg-blue-500 p-2 rounded">Log out</a>
       </div>
     </div>
   </div>
