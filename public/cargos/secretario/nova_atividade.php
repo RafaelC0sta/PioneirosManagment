@@ -39,8 +39,8 @@
                                 while ($row = $result->fetch_assoc()) {
                                     echo "<tr>";
                                     echo "<td class='p-4 text-center' data-label='Nome'>" . htmlspecialchars($row['nome']) . "</td>";
-                                    echo "<td class='p-4 text-center' data-label='Presente'><input type='checkbox'></td>";
-                                    echo "<td class='p-4 text-center' data-label='Falta'><input type='checkbox'></td>";
+                                    echo "<td class='p-4 text-center' data-label='Presente' id='presente'><input type='checkbox'></td>";
+                                    echo "<td class='p-4 text-center' data-label='Falta' id='falta'><input type='checkbox'></td>";
                                     echo "</tr>";
                                 }
                             endif;
