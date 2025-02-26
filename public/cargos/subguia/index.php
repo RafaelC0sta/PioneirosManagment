@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guia</title>
-    <link rel="stylesheet" href="/pioneirosequipas/public/css/index.css">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
 </head>
 <?php include("../../header.php")?>
 <body>
