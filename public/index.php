@@ -17,9 +17,19 @@
 <body>
     <?php include("header.php"); ?>
     <div class="p-6">
-        <h1 class="text-3xl font-bold">Olá, <?= htmlspecialchars($nome); ?>!</h1>
-        <h2 class="text-lg">Cargo: <?= htmlspecialchars($cargo); ?></h2>
-        <h2 class="text-lg">Equipa: <?= htmlspecialchars($equipa); ?></h2>
+        <div class="flex">
+            <div class="sm:w-1/2">
+                <h1 class="text-3xl font-bold">Olá, <?= htmlspecialchars($nome); ?>!</h1>
+                <h2 class="text-lg">Cargo: <?= htmlspecialchars($cargo); ?></h2>
+                <h2 class="text-lg">Equipa: <?= htmlspecialchars($equipa); ?></h2>
+            </div>
+            <div class="sm:w-1/2 pt-9">
+                <a href="atividades.php" class="border border-blue-400 text-black px-20 py-6 rounded-lg shadow-md hover:bg-blue-500 hover:text-white transition ease-in-out">
+                    Ver Atividades
+                </a>
+            </div>
+        </div>
+        
 
         <div class="infos">
             <br>
