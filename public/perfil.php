@@ -4,13 +4,14 @@
     if (isset($_SESSION['pioneiro'])) {
         $nome = $_SESSION['pioneiro'];
         $noites_campo = $_SESSION['noites_campo'];
-        $etapa_progresso = $_SESSION['etapa_progresso'];
+        //$etapa_progresso = $_SESSION['etapa_progresso'];
     } else {
         $nome = "";
         $noites_campo = "";
-        $etapa_progresso = "";
+        //$etapa_progresso = "";
     }
 
+    $etapa_progresso = "Conhecimento";
     $mostrarMSG = false;
     $insigniaAntes = "";    
     $insigniaDepois = "";
@@ -60,15 +61,23 @@
     if ($etapa_progresso == "Desprendimento") {
         $insigniaEtapaAntes = "../images/desprendimento.jpg";
         $insigniaEtapaDepois = "../images/conhecimento.jpg";
+        $wAntes = 16;
+        $wDepois = 24;
     } else if ($etapa_progresso == "Conhecimento") {
         $insigniaEtapaAntes = "../images/conhecimento.jpg";
         $insigniaEtapaDepois = "../images/vontade.jpg";
+        $wAntes = 24;
+        $wDepois = 16;
     } else if ($etapa_progresso == "Vontade") {
         $insigniaEtapaAntes = "../images/vontade.jpg";
         $insigniaEtapaDepois = "../images/construcao.jpg";
+        $wAntes = 16;
+        $wDepois = 16;
     } else if ($etapa_progresso == "Construcao") {
         $insigniaEtapaAntes = "../images/vontade.jpg";
         $insigniaEtapaDepois = "../images/construcao.jpg";
+        $wAntes = 16;
+        $wDepois = 16;
     }
 ?>
 
@@ -119,13 +128,11 @@
                     if ($etapa_progresso == "Construcao") {
                         echo "";
                     } else {
-                        echo "<img src='$insigniaEtapaAntes' alt='insgigniaAntes' class='w-16 h-19'>";
-                        echo " <div class='w-[35%] text-center text-6xl'>&rarr;</div>";
+                        echo "<img src='$insigniaEtapaAntes' alt='insgigniaAntes' class='w-$wAntes h-18'>";
+                        echo "<div class='w-[35%] text-center text-6xl'>&rarr;</div>";
+                        echo "<img src='$insigniaEtapaDepois' alt='insiniaDepois' class='w-$wDepois h-18'>";
                     }
-                
                 ?>
-                
-                <img src="<?php echo $insigniaEtapaDepois ?>" alt="insiniaDepois" class="w-16 h-19">
             </div>
         </div>
     </div>
