@@ -52,7 +52,8 @@
         } else {
             echo "Erro ao adicionar atividade: " . $connection->error;
         }
-    }    
+    }
+    
     $stmt->close();
     $stmt_atualizarNoitesCampo->close();
     $stmt_presenca->close();

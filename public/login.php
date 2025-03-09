@@ -17,7 +17,7 @@
         $login = $resultado->fetch_assoc();
 
         if ($login && $login['password'] === $password) {
-            $queryCargoEquipa = "SELECT nome, cargo, equipa, noites_campo FROM pioneiros WHERE id = ?";
+            $queryCargoEquipa = "SELECT nome, cargo, equipa, noites_campo, etapa_progresso FROM pioneiros WHERE id = ?";
             $stmt2 = $connection->prepare($queryCargoEquipa);
             $stmt2->bind_param("i", $login['id_pioneiro']);
             $stmt2->execute();
@@ -29,6 +29,7 @@
                 $_SESSION['cargo'] = $pioneiroInfo['cargo'];
                 $_SESSION['equipa'] = $pioneiroInfo['equipa'];
                 $_SESSION['noites_campo'] = $pioneiroInfo['noites_campo'];
+                $_SESSION['etapa_progresso'] = $pioneiroInfo['etapa_progresso'];
                 header("Location: ../public/index.php");
                 exit;
             } else {

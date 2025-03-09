@@ -41,6 +41,8 @@
             <p>Rua Dom José de Alarcão,<br>2805-319 Cova da Piedade</p>
             <a href="https://maps.app.goo.gl/ey9WgGeswhyht3Um7" target="_blank">Ver mapa</a>
         </div>
+
+        <!-- Adicionar uma especie de Dashboard -->
     </div>
 </body>
 </html>
