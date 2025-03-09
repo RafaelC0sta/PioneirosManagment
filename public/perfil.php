@@ -4,14 +4,13 @@
     if (isset($_SESSION['pioneiro'])) {
         $nome = $_SESSION['pioneiro'];
         $noites_campo = $_SESSION['noites_campo'];
-        //$etapa_progresso = $_SESSION['etapa_progresso'];
+        $etapa_progresso = $_SESSION['etapa_progresso'];
     } else {
         $nome = "";
         $noites_campo = "";
-        //$etapa_progresso = "";
+        $etapa_progresso = "";
     }
 
-    $etapa_progresso = "Conhecimento";
     $mostrarMSG = false;
     $insigniaAntes = "";    
     $insigniaDepois = "";
