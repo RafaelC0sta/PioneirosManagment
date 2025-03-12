@@ -125,7 +125,7 @@
             <div class="flex items-center justify-center space-x-4">
                 <?php 
                     if ($etapa_progresso == "Construcao") {
-                        echo "";
+                        echo "<img src='$insigniaEtapaDepois' alt='insiniaDepois' class='w-$wDepois h-18'>";
                     } else {
                         echo "<img src='$insigniaEtapaAntes' alt='insgigniaAntes' class='w-$wAntes h-18'>";
                         echo "<div class='w-[35%] text-center text-6xl'>&rarr;</div>";
