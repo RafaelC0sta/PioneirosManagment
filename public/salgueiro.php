@@ -26,7 +26,12 @@
             <div class="mt-6 bg-white shadow-sm rounded-md overflow-hidden">
                 <div class="overflow-x-auto">
                 <?php 
-                    $selectPioneiros = "SELECT * FROM pioneiros where equipa='Salgueiro Maia' order by cargo asc";
+                    //$selectPioneiros = "SELECT * FROM pioneiros where equipa='Salgueiro Maia' order by cargo asc";
+                    $selectPioneiros = "SELECT p.id, p.nome, p.id_cne, p.dt_nascimento, c.cargo, e.equipa, ep.etapa_progresso, p.noites_campo, p.observacoes FROM pioneiros as p
+                    join cargos as c on p.cargo_fk = c.cargo_id
+                    join equipas as e on p.equipa_fk = e.equipa_id
+                    join etapas_progresso as ep on p.etapa_progresso_fk = ep.etapa_id
+                    where e.equipa = 'Salgueiro Maia'";
                     $result = $connection->query($selectPioneiros);
 
                     if ($result && $result->num_rows > 0):
@@ -41,7 +46,7 @@
                                 <th class="p-4 text-center">Etapa de Progresso</th>
                                 <th class="p-4 text-center">Noites de Campo</th>
                                 <th class="p-4 text-center">Observações</th>
-                                <?php if (($cargo === "Guia" || $cargo === "Subguia") && $equipa === "Salgueiro Maia"): ?>
+                                <?php if (($cargo === "Guia" || $cargo === "Sub Guia") && $equipa === "Salgueiro Maia"): ?>
                                     <th colspan="2">Ações</th>
                                 <?php endif; ?>
                             </tr>
@@ -60,7 +65,7 @@
                                     echo "<td class='p-4 text-center' data-label='Observações'>" . htmlspecialchars($row['observacoes']) . "</td>";
                                     
                                     // Exibir a coluna "editar" apenas se a condição for verdadeira
-                                    if (($cargo === "Guia" || $cargo === "Subguia") && $equipa === "Salgueiro Maia") {
+                                    if (($cargo === "Guia" || $cargo === "Sub Guia") && $equipa === "Salgueiro Maia") {
                                         echo "<td data-label='Ações'><a href='form_update.php?id=" . htmlspecialchars($row['id']) . "'><div class='icon'><img src='../images/editing.png' alt='edit_icon' style='width: 25px;'></div></a></td>";
                                         echo "<td data-label='Ações'><a href='#' onclick=confirmDelete(" . htmlspecialchars($row['id']) . ")><img alt='deleteIcon' src='../images/delete.png' style='width: 25px;'></a></td>";
                                     }
@@ -78,7 +83,7 @@
             </div>
 
             <div class="mt-6">
-                <?php if (($cargo === "Guia" || $cargo === "Subguia") && $equipa === "Salgueiro Maia"): ?>
+                <?php if (($cargo === "Guia" || $cargo === "Sub Guia") && $equipa === "Salgueiro Maia"): ?>
                     <a href="#" class="bg-blue-400 text-white px-6 py-3 rounded-lg shadow-md hover:bg-blue-500">
                         Adicionar Pioneiro
                     </a>

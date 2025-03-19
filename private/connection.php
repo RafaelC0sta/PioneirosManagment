@@ -2,7 +2,7 @@
     $dbserver = "localhost";
     $dbuser = "root";
     $dbpassword = "";
-    $dbusing = "pioneirosmanagment";
+    $dbusing = "pioneirosmanagmentdb";
 
     $connection = new mysqli($dbserver, $dbuser, $dbpassword, $dbusing);
 

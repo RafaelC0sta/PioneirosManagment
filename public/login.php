@@ -17,9 +17,14 @@
         $login = $resultado->fetch_assoc();
 
         if ($login && $login['password'] === $password) {
-            $queryCargoEquipa = "SELECT nome, cargo, equipa, noites_campo, etapa_progresso FROM pioneiros WHERE id = ?";
+            //$queryCargoEquipa = "SELECT nome, cargo, equipa, noites_campo, etapa_progresso FROM pioneiros WHERE id = ?";
+            $queryCargoEquipa = "SELECT p.nome, c.cargo, e.equipa, noites_campo, ep.etapa_progresso from pioneiros as p
+            join cargos as c on p.cargo_fk = c.cargo_id
+            join equipas as e on p.equipa_fk = e.equipa_id
+            join etapas_progresso as ep on p.etapa_progresso_fk = ep.etapa_id
+            where p.id = ?";
             $stmt2 = $connection->prepare($queryCargoEquipa);
-            $stmt2->bind_param("i", $login['id_pioneiro']);
+            $stmt2->bind_param("i", $login['pioneiro_id']);
             $stmt2->execute();
         
             $resultadoCargoEquipa = $stmt2->get_result();
