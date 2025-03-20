@@ -11,6 +11,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atividades</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
 </head>
 <body>
     <?php include("header.php"); ?>
@@ -38,6 +39,7 @@
                                 <th class="p-4 text-center">Imaginário</th>
                                 <th class="p-4 text-center">Ementa</th>
                                 <th class="p-4 text-center">Observações</th>
+                                <th class="p-4 text-center">Presencas</th>
                                 <?php if ($cargo === "Secretario"): ?>
                                     <th class="p-4 text-center" colspan="2">Ações</th>
                                 <?php endif; ?>
@@ -56,6 +58,7 @@
                                     echo "<td class='p-4 text-center' data-label='Imaginário'>" . htmlspecialchars($row['imaginario']) . "</td>";
                                     echo "<td class='p-4 text-center' data-label='Ementa'>" . htmlspecialchars($row['ementa']) . "</td>";
                                     echo "<td class='p-4 text-center' data-label='Observações'>" . htmlspecialchars($row['observacoes']) . "</td>";
+                                    echo "<td class='p-4 text-center' data-label='Presencas'>Ver</td>";
                                     if ($cargo === "Secretario") {
                                         echo "<td data-label='Ações'><a href='form_update.php?id=" . htmlspecialchars($row['id']) . "'><div class='icon'><img src='../images/editing.png' alt='edit_icon' style='width: 25px;'></div></a></td>";
                                         echo "<td data-label='Ações'><a href='#' onclick=confirmDelete(" . htmlspecialchars($row['id']) . ")><img alt='deleteIcon' src='../images/delete.png' style='width: 25px;'></a></td>";
