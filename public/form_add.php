@@ -40,22 +40,22 @@
                 
                 <label for="cargo" class="block text-sm font-medium text-gray-700 mb-1">Cargo:</label>
                 <select id="cargo" name="cargo" required class="w-full p-3 border border-gray-300 rounded-md text-gray-800 mb-4 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500">
-                    <option value="guia">Guia</option>
-                    <option value="subguia">Sub-Guia</option>
-                    <option value="secretario">Secretário</option>
-                    <option value="tesoureiro">Tesoureiro</option>
-                    <option value="guardamaterial">Guarda Material</option>
-                    <option value="cozinheiro">Cozinheiro</option>
-                    <option value="socorrista">Socorrista</option>
-                    <option value="animador">Animador</option>
+                    <option value="1">Guia</option>
+                    <option value="2">Sub Guia</option>
+                    <option value="3">Secretário</option>
+                    <option value="4">Tesoureiro</option>
+                    <option value="5">Guarda Material</option>
+                    <option value="6">Cozinheiro</option>
+                    <option value="7">Socorrista</option>
+                    <option value="8">Animador</option>
                 </select><br>
 
                 <label for="etapaprogresso" class="block text-sm font-medium text-gray-700 mb-1">Etapa do Progresso</label>
                 <select id="etapaprogresso" name="etapaprogresso" required class="w-full p-3 border border-gray-300 rounded-md text-gray-800 mb-4 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500">
-                    <option value="desprendimento">Desprendimento</option>
-                    <option value="conhecimento">Conhecimento</option>
-                    <option value="vontade">Vontade</option>
-                    <option value="construcao">Construção</option>
+                    <option value="1">Desprendimento</option>
+                    <option value="2">Conhecimento</option>
+                    <option value="3">Vontade</option>
+                    <option value="4">Construção</option>
                 </select><br>
 
                 <label class="block text-sm font-medium text-gray-700 mb-1">Noites de Campo:</label>

@@ -84,7 +84,7 @@
 
             <div class="mt-6">
                 <?php if (($cargo === "Guia" || $cargo === "Sub Guia") && $equipa === "Nelson Mandela"): ?>
-                    <a href="#" class="bg-blue-400 text-white px-6 py-3 rounded-lg shadow-md hover:bg-blue-500">
+                    <a href="form_add.php?equipa=Nelson Mandela" class="bg-blue-400 text-white px-6 py-3 rounded-lg shadow-md hover:bg-blue-500">
                         Adicionar Pioneiro
                     </a>
                 <?php endif; ?>

@@ -14,9 +14,19 @@
     if (!in_array($equipa, $equipasValidas)) {
         die("Tentativa inválida de alterar a equipa!");
     }
+
+    if ($equipa == "Karol Wojtyla") {
+        $equipa = 1;
+    } elseif ($equipa == "Nelson Mandela") {
+        $equipa = 2;
+    } elseif ($equipa == "Salgueiro Maia") {
+        $equipa = 3;
+    } else {
+        $equipa = null;
+    }
     
-    $stmt = $connection->prepare("INSERT INTO pioneiros (nome, id_cne, dt_nascimento, equipa, cargo, etapa_progresso, noites_campo, observacoes) VALUES (?, ?, ?, ?, ?, ?, ?, ?) ");
-    $stmt->bind_param("sissssis", $nome, $id_cne, $dt_nascimento, $equipa, $cargo, $etapaprogresso, $noitescampo, $observacoes);
+    $stmt = $connection->prepare("INSERT INTO pioneiros (nome, id_cne, dt_nascimento, equipa_fk, cargo_fk, etapa_progresso_fk, noites_campo, observacoes) VALUES (?, ?, ?, ?, ?, ?, ?, ?) ");
+    $stmt->bind_param("sisiiisis", $nome, $id_cne, $dt_nascimento, $equipa, $cargo, $etapaprogresso, $noitescampo, $observacoes);
     
 
     if (!$stmt->execute()) {
