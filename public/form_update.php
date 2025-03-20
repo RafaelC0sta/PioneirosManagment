@@ -3,7 +3,11 @@
     require '../private/connection.php';
 
     $id = $_GET['id']; 
-    $sql = "SELECT * FROM pioneiros WHERE id=$id";
+    $sql = "SELECT * from pioneiros as p
+            join cargos as c on p.cargo_fk = c.cargo_id
+            join equipas as e on p.equipa_fk = e.equipa_id
+            join etapas_progresso as ep on p.etapa_progresso_fk = ep.etapa_id
+            where p.id = $id";
     $result = $connection->query($sql);
     $row = $result->fetch_assoc();
 ?>
@@ -37,22 +41,22 @@
                 
                 <label for="cargo" class="block text-sm font-medium text-gray-700 mb-2">Cargo:</label>
                 <select id="cargo" name="cargo" class="w-full p-3 border border-gray-300 rounded-md text-gray-800 mb-4 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500">
-                    <option value="guia" <?php echo $row['cargo'] == 'Guia' ? 'selected' : ''; ?>>Guia</option>
-                    <option value="subguia" <?php echo $row['cargo'] == 'Subguia' ? 'selected' : ''; ?>>Sub-Guia</option>
-                    <option value="secretario" <?php echo $row['cargo'] == 'Secretario' ? 'selected' : ''; ?>>Secretário</option>
-                    <option value="tesoureiro" <?php echo $row['cargo'] == 'Tesoureiro' ? 'selected' : ''; ?>>Tesoureiro</option>
-                    <option value="guardamaterial" <?php echo $row['cargo'] == 'Guardamaterial' ? 'selected' : ''; ?>>Guarda Material</option>
-                    <option value="cozinheiro" <?php echo $row['cargo'] == 'Cozinheiro' ? 'selected' : ''; ?>>Cozinheiro</option>
-                    <option value="socorrista" <?php echo $row['cargo'] == 'Socorrista' ? 'selected' : ''; ?>>Socorrista</option>
-                    <option value="animador" <?php echo $row['cargo'] == 'Animador' ? 'selected' : ''; ?>>Animador</option>
+                    <option value="1" <?php echo $row['cargo'] == 'Guia' ? 'selected' : ''; ?>>Guia</option>
+                    <option value="2" <?php echo $row['cargo'] == 'Sub Guia' ? 'selected' : ''; ?>>Sub Guia</option>
+                    <option value="3" <?php echo $row['cargo'] == 'Secretario' ? 'selected' : ''; ?>>Secretário</option>
+                    <option value="4" <?php echo $row['cargo'] == 'Tesoureiro' ? 'selected' : ''; ?>>Tesoureiro</option>
+                    <option value="5" <?php echo $row['cargo'] == 'Guarda Material' ? 'selected' : ''; ?>>Guarda Material</option>
+                    <option value="6" <?php echo $row['cargo'] == 'Cozinheiro' ? 'selected' : ''; ?>>Cozinheiro</option>
+                    <option value="7" <?php echo $row['cargo'] == 'Socorrista' ? 'selected' : ''; ?>>Socorrista</option>
+                    <option value="8" <?php echo $row['cargo'] == 'Animador' ? 'selected' : ''; ?>>Animador</option>
                 </select><br>
 
                 <label for="etapaprogresso" class="block text-sm font-medium text-gray-700 mb-2">Etapa do Progresso</label>
                 <select id="etapaprogresso" name="etapaprogresso" value="<?php echo $row['etapa_progresso'] ?>" class="w-full p-3 border border-gray-300 rounded-md text-gray-800 mb-4 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500">
-                    <option value="desprendimento" <?php echo $row['etapa_progresso'] == 'Desprendimento' ? 'selected' : ''; ?>>Desprendimento</option>
-                    <option value="conhecimento" <?php echo $row['etapa_progresso'] == 'Conhecimento' ? 'selected' : ''; ?>>Conhecimento</option>
-                    <option value="vontade" <?php echo $row['etapa_progresso'] == 'Vontade' ? 'selected' : ''; ?>>Vontade</option>
-                    <option value="construcao" <?php echo $row['etapa_progresso'] == 'Construcao' ? 'selected' : ''; ?>>Construção</option>
+                    <option value="1" <?php echo $row['etapa_progresso'] == 'Desprendimento' ? 'selected' : ''; ?>>Desprendimento</option>
+                    <option value="2" <?php echo $row['etapa_progresso'] == 'Conhecimento' ? 'selected' : ''; ?>>Conhecimento</option>
+                    <option value="3" <?php echo $row['etapa_progresso'] == 'Vontade' ? 'selected' : ''; ?>>Vontade</option>
+                    <option value="4" <?php echo $row['etapa_progresso'] == 'Construcao' ? 'selected' : ''; ?>>Construção</option>
                 </select><br>
 
                 <label class="block text-sm font-medium text-gray-700 mb-2">Noites de Campo: </label>

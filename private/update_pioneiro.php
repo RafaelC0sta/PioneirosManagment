@@ -11,7 +11,7 @@
     $observacoes = $_POST['observacoes'];
 
     
-    $stmt = $connection->prepare("UPDATE pioneiros SET nome=?, id_cne=?, dt_nascimento=?, cargo=?, etapa_progresso=?, noites_campo=?, observacoes=? WHERE id=?");
+    $stmt = $connection->prepare("UPDATE pioneiros SET nome=?, id_cne=?, dt_nascimento=?, cargo_fk=?, etapa_progresso_fk=?, noites_campo=?, observacoes=? WHERE id=?");
     $stmt->bind_param("sisssisi", $nome, $id_cne, $dt_nascimento, $cargo, $etapaprogresso, $noitescampo, $observacoes, $id);
     
 
