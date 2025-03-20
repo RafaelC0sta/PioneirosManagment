@@ -25,7 +25,11 @@
                 </button>
                 <div id="tabelaPresencas" class="hidden">
                     <?php
-                        $selectPioneiros = "SELECT * FROM pioneiros ORDER BY equipa ASC";
+                        $selectPioneiros = "SELECT * FROM pioneiros as p 
+                        join cargos as c on p.cargo_fk = c.cargo_id
+                        join equipas as e on p.equipa_fk = e.equipa_id
+                        join etapas_progresso as ep on p.etapa_progresso_fk = ep.etapa_id
+                        ORDER BY equipa_fk ASC";
                         $result = $connection->query($selectPioneiros);
 
                         if ($result && $result->num_rows > 0):

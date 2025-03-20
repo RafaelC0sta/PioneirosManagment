@@ -16,17 +16,17 @@
     }
 
     if ($equipa == "Karol Wojtyla") {
-        $equipa = 1;
+        $equipa = '1';
     } elseif ($equipa == "Nelson Mandela") {
-        $equipa = 2;
+        $equipa = '2';
     } elseif ($equipa == "Salgueiro Maia") {
-        $equipa = 3;
+        $equipa = '3';
     } else {
         $equipa = null;
     }
     
     $stmt = $connection->prepare("INSERT INTO pioneiros (nome, id_cne, dt_nascimento, equipa_fk, cargo_fk, etapa_progresso_fk, noites_campo, observacoes) VALUES (?, ?, ?, ?, ?, ?, ?, ?) ");
-    $stmt->bind_param("sisiiisis", $nome, $id_cne, $dt_nascimento, $equipa, $cargo, $etapaprogresso, $noitescampo, $observacoes);
+    $stmt->bind_param("sisiiiis", $nome, $id_cne, $dt_nascimento, $equipa, $cargo, $etapaprogresso, $noitescampo, $observacoes);
     
 
     if (!$stmt->execute()) {
