@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 19-Mar-2025 às 20:03
+-- Tempo de geração: 20-Mar-2025 às 14:07
 -- Versão do servidor: 11.4.5-MariaDB
 -- versão do PHP: 8.2.12
 
@@ -45,7 +45,8 @@ CREATE TABLE `atividades` (
 --
 
 INSERT INTO `atividades` (`id`, `local`, `data_inicio`, `data_fim`, `noites_campo`, `tema`, `imaginario`, `ementa`, `observacoes`, `created_at`) VALUES
-(1, 'Qta. dos Alamos', '2025-03-01', '2025-03-03', 2, 'Vaiana', 'Vaiana e os Escuteiros...', 'Dia 1\r\nPeq. Almoco: Casa\r\nAlmoco: casa\r\nJantar: Carbonara\r\n\r\nDia 2\r\nPeq. Almoco: Cereais\r\nAlmoco: Bifanas', 'n/a', '2025-02-27 21:23:54');
+(1, 'Qta. dos Alamos', '2025-03-01', '2025-03-03', 2, 'Vaiana', 'Vaiana e os Escuteiros...', 'Dia 1\r\nPeq. Almoco: Casa\r\nAlmoco: casa\r\nJantar: Carbonara\r\n\r\nDia 2\r\nPeq. Almoco: Cereais\r\nAlmoco: Bifanas', 'n/a', '2025-02-27 21:23:54'),
+(2, 'Belem', '2025-03-22', '2025-03-22', 0, '-', '-', '-', '-', '2025-03-20 12:13:24');
 
 -- --------------------------------------------------------
 
@@ -132,7 +133,8 @@ CREATE TABLE `login` (
 
 INSERT INTO `login` (`id`, `username`, `password`, `pioneiro_id`) VALUES
 (1, 'rafaelcosta', '1234', 1),
-(2, 'inessimoes', '1234', 2);
+(2, 'inessimoes', '1234', 2),
+(3, 'carolinacalado', '1234', 5);
 
 -- --------------------------------------------------------
 
@@ -158,8 +160,34 @@ CREATE TABLE `pioneiros` (
 
 INSERT INTO `pioneiros` (`id`, `nome`, `id_cne`, `dt_nascimento`, `noites_campo`, `observacoes`, `cargo_fk`, `equipa_fk`, `etapa_progresso_fk`) VALUES
 (1, 'Rafael Costa', 1234, '2007-06-08', 76, 'Goofy ah ?', 2, 1, 4),
-(2, 'Ines Simoes', 1234, '2025-03-19', 56, 'pupy ?', 1, 2, 4),
-(3, 'Rita Ramos', 1234, '2025-03-19', 85, 'n/a', 1, 3, 4);
+(2, 'Ines Simoes', 1234, '2025-03-19', 57, 'pupy ahh?', 1, 2, 4),
+(3, 'Rita Ramos', 1234, '2025-03-19', 85, 'n/a', 1, 3, 4),
+(4, 'Ines Mendes', 1234, '2025-03-20', 67, 'n/a', 2, 2, 3),
+(5, 'Carolina Calado', 1234, '2025-03-20', 53, 'n/a', 3, 1, 3);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `presencas`
+--
+
+CREATE TABLE `presencas` (
+  `presenca_id` int(11) NOT NULL,
+  `atividade_fk` int(11) DEFAULT NULL,
+  `pioneiro_fk` int(11) DEFAULT NULL,
+  `status` enum('presente','falta') DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Extraindo dados da tabela `presencas`
+--
+
+INSERT INTO `presencas` (`presenca_id`, `atividade_fk`, `pioneiro_fk`, `status`) VALUES
+(1, 2, 1, 'presente'),
+(2, 2, 4, 'presente'),
+(3, 2, 3, 'presente'),
+(4, 2, 5, 'falta'),
+(5, 2, 2, 'falta');
 
 --
 -- Índices para tabelas despejadas
@@ -206,6 +234,14 @@ ALTER TABLE `pioneiros`
   ADD KEY `fk_equipa` (`equipa_fk`);
 
 --
+-- Índices para tabela `presencas`
+--
+ALTER TABLE `presencas`
+  ADD PRIMARY KEY (`presenca_id`),
+  ADD KEY `fk_atividade` (`atividade_fk`),
+  ADD KEY `fk_pioneiro` (`pioneiro_fk`);
+
+--
 -- AUTO_INCREMENT de tabelas despejadas
 --
 
@@ -213,7 +249,7 @@ ALTER TABLE `pioneiros`
 -- AUTO_INCREMENT de tabela `atividades`
 --
 ALTER TABLE `atividades`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `cargos`
@@ -237,13 +273,19 @@ ALTER TABLE `etapas_progresso`
 -- AUTO_INCREMENT de tabela `login`
 --
 ALTER TABLE `login`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `pioneiros`
 --
 ALTER TABLE `pioneiros`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT de tabela `presencas`
+--
+ALTER TABLE `presencas`
+  MODIFY `presenca_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Restrições para despejos de tabelas
@@ -262,6 +304,13 @@ ALTER TABLE `pioneiros`
   ADD CONSTRAINT `fk_cargo` FOREIGN KEY (`cargo_fk`) REFERENCES `cargos` (`cargo_id`),
   ADD CONSTRAINT `fk_equipa` FOREIGN KEY (`equipa_fk`) REFERENCES `equipas` (`equipa_id`),
   ADD CONSTRAINT `fk_etapa` FOREIGN KEY (`etapa_progresso_fk`) REFERENCES `etapas_progresso` (`etapa_id`);
+
+--
+-- Limitadores para a tabela `presencas`
+--
+ALTER TABLE `presencas`
+  ADD CONSTRAINT `fk_atividade` FOREIGN KEY (`atividade_fk`) REFERENCES `atividades` (`id`),
+  ADD CONSTRAINT `fk_pioneiro` FOREIGN KEY (`pioneiro_fk`) REFERENCES `pioneiros` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
