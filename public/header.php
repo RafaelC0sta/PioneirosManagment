@@ -1,20 +1,20 @@
 <?php
-    // este if foi para resolver um pequeno bug -> overflow de requests para o login
-    if (session_status() === PHP_SESSION_NONE) {
-      session_start();
-    }
+// este if foi para resolver um pequeno bug -> overflow de requests para o login
+if (session_status() === PHP_SESSION_NONE) {
+  session_start();
+}
 
-    $session = isset($_SESSION['pioneiro']);
+$session = isset($_SESSION['pioneiro']);
 
-    if ($session) {
-      $nome = $_SESSION['pioneiro'];
-      $cargo = $_SESSION['cargo'];
-    } else {
-      $nome = "";
-      $cargo = "";
-    }
+if ($session) {
+  $nome = $_SESSION['pioneiro'];
+  $cargo = $_SESSION['cargo'];
+} else {
+  $nome = "";
+  $cargo = "";
+}
 
-    $primeiroNome = strtok($nome, " ");
+$primeiroNome = strtok($nome, " ");
 ?>
 <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
 
@@ -24,7 +24,7 @@
     <div class="flex md:hidden">
       <button id="menu-toggle" type="button" class="text-white hover:cursor-pointer">
         <span class="sr-only">Open main menu</span>
-          <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
         </svg>
       </button>
@@ -37,7 +37,7 @@
       <a href="/pioneirosequipas/public/cargos/<?= htmlspecialchars($cargo); ?>" class="text-lg font-semibold"><?= htmlspecialchars($cargo); ?></a>
     </div>
 
-    <div class="hidden md:flex md:gap-x-9" >
+    <div class="hidden md:flex md:gap-x-9">
       <a href="/pioneirosequipas/public/perfil.php" class="text-lg font-semibold"><?= htmlspecialchars($primeiroNome); ?></a>
       <a href="/pioneirosequipas/private/logout.php" class="text-lg font-semibold">Log out &rarr;</a>
     </div>
