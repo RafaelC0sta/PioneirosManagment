@@ -25,13 +25,7 @@ $equipa = $_SESSION['equipa'];
         <h2 class="text-lg">Cargo: <?= htmlspecialchars($cargo); ?></h2>
         <h2 class="text-lg">Equipa: <?= htmlspecialchars($equipa); ?></h2>
       </div>
-      <div class="sm:w-1/2 pt-9">
-        <a href="atividades.php" class="border border-blue-400 text-black px-20 py-6 rounded-lg shadow-md hover:bg-blue-500 hover:text-white transition ease-in-out">
-          Ver Atividades
-        </a>
-      </div>
     </div>
-
 
     <div class="infos">
       <br>
@@ -46,8 +40,13 @@ $equipa = $_SESSION['equipa'];
       <a href="https://maps.app.goo.gl/ey9WgGeswhyht3Um7" target="_blank">Ver mapa</a>
     </div>
 
+    <div class="sm:w-1/2 pt-9">
+      <a href="atividades.php" class="border border-blue-400 text-black px-20 py-6 rounded-lg shadow-md hover:bg-blue-500 hover:text-white transition ease-in-out">
+        Ver Atividades
+      </a>
+    </div>
+
     <!-- Adicionar uma especie de Dashboard -->
   </div>
 </body>
-
 </html>
