@@ -14,18 +14,6 @@ $cargo = $_SESSION['cargo'];
   <title>Atividades</title>
   <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
 </head>
-
-<div id="modalPresencas" class="fixed inset-0 backdrop-blur-sm backdrop-brightness-75 flex items-center justify-center hidden z-50">
-  <div class="bg-white rounded-lg shadow-lg w-[90%] max-w-2xl p-6 relative">
-    <button onclick="closePresencas()" class="absolute top-2 right-3 text-gray-500 hover:text-black text-xl">&times;</button>
-    <h3 class="text-xl font-bold mb-4">Presenças da Atividade</h3>
-    <div id="presencasContent" class="overflow-x-auto">
-      <p>A carregar...</p>
-    </div>
-  </div>
-</div>
-
-
 <body>
   <?php include("header.php"); ?>
 
