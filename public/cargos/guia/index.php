@@ -10,8 +10,8 @@
 <?php include("../../header.php") ?>
 
 <body>
-  <div class="body">
-    <?php echo "Guia" ?>
+  <div class="p-6">
+    Working On
   </div>
 </body>
 
