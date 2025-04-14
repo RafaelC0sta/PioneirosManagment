@@ -49,7 +49,6 @@ $row = $result->fetch_assoc();
               <tbody class="divide-y">
               <?php
               while ($rowPio = $result->fetch_assoc()) {
-                // Check attendance status for this pioneer
                 $sql_presenca = "SELECT status FROM presencas WHERE atividade_fk = ? AND pioneiro_fk = ?";
                 $stmt_presenca = $connection->prepare($sql_presenca);
                 $stmt_presenca->bind_param("ii", $id, $rowPio['id']);
